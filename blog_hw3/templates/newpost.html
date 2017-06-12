@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <h2>New Post</h2>
+    
+    {% if user %}
+        {{user.name}}
+    {% else %}
+    {% endif %}
+
+    <form method="post">
+        <label>
+            <div>subject</div>
+            <input type="text" name="subject" value="{{subject}}">
+        </label>
+
+        <label>
+            <div>post</div>
+            <textarea name="content">{{content}}</textarea>
+        </label>
+
+        <div class="error">{{error}}</div>
+
+        <input type="submit">
+    </form>
+{% endblock %}
