@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <h2>Edit Post</h2>
+    <h3>What would you like to change?</h3>
+
+    <form method="post">
+    	<label>
+    		<div><b>Subject</b></div>
+    		<input type="text" name="subject" value="{{post.subject}}">
+    	</label>
+
+    	<label>
+    		<div><b>Content</b></div>
+    		<textarea name="content">{{post.content}}</textarea>
+    	</label>
+
+    	<div class="error">{{error}}</div>
+
+    		<div  class="center btn-group">
+          		<input class="btn btn" type="submit" name="update" value="Update">
+          		<input class="btn btn" type="submit" name="cancel" value="Cancel" >
+          	</div>
+    </form>
+{% endblock %}    
+
+
+
+    

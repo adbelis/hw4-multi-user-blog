@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+	<div>
+		<a  type="button" method="get" class="btn btn" href="/blog/editpost/{{post.key().id()}}">Edit</a>
+
+		<a  type="button" class="btn btn" href="/blog/deletepost/{{post.key().id()}}">Delete</a>
+	</div>
+
+    {{post.render() | safe}}
+{% endblock %}
