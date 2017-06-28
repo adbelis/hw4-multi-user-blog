@@ -1,0 +1,29 @@
+<div class="comment">
+    <div class="comment-heading">
+        <div class="comment-author">
+            Comment by: {{c.author}}
+        </div>
+
+        <div class="comment-date">
+        	Created: {{c.created.strftime("%Y, %b %d")}}
+        	Modified: {{c.modified.strftime("%Y, %b %d")}}
+        </div>
+
+        <div>
+        	<a href="/editcomment/{{c.key().id()}}">Edit</a>
+        </div>
+
+    	<div class="content">
+    		{{c.content}}
+    	</div>
+
+	</div>
+
+	<hr>
+	<div class="contnet-render">
+	    {{c._render_text | safe}}
+	</div>
+
+</div>
+
+

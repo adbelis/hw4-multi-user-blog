@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div>
+	<a  type="button" method="get" class="btn btn" href="/blog/editpost/{{post.key().id()}}">Edit</a>
+	<a  type="button" class="btn btn" href="/blog/deletepost/{{post.key().id()}}">Delete</a>
+</div>
+
+
+<div>
+{{post.render() | safe}}
+<br>
+</div>
+<div class="like-group">
+	<a href="/likepost/{{ post.key().id() }}">
+        <button id="likebutton" class="btn btn-info">
+            Like {{ post.number_of_likes() }}
+        </button>
+    </a>
+</div>
+
+<div>
+	{% for c in comments %}
+	{{c.render() | safe}}
+	{% endfor %}
+</div>
+
+<div>
+<h3>Comment about Blog Post:</h3>
+	<form method="post">
+		<textarea id="editor">{{content}} </textarea>
+		<br>
+		<input class="btn btn" type="submit" value="Submit" name="submit">
+		<a href="/blog/{{post.key().id()}}"><button class="btn btn">Cancel</button></a>
+	</form>
+</div>
+{% endblock %}

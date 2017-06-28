@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+  	{% for p in posts %}
+    	{{ p.render() | safe }}
+<br>
+	
+	<div>
+	<a href="/blog/comment/{{ p.key().id() }}">
+        <button class="btn">
+            Comment
+        </button>
+    </a>
+    </div>
+<hr>
+  	{% endfor %}
+
+{% endblock %}

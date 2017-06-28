@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block content %}
+    
+    <form method="post">
+        <label class="input-group">
+            <div>Username</div>
+            <input type="text" name="username" value="{{username}}">
+        </label>
+
+        <div class="error">
+            {{error_username}}
+        </div>
+
+        <label class="input-group">
+            <div>Password</div>
+            <input type="password" name="password" value="">
+        </label>
+
+        <div class="error">
+            {{error_password}}
+        </div>
+
+        <label class="input-group">
+            <div>Verify Password</div>
+            <input type="password" name="verify" value="">
+        </label>
+
+        <div class="error">
+            {{error_verify}}
+        </div>
+            
+        <label class="input-group">
+            <div>Optional Email</div>
+            <input type="text" name="email" value="{{email}}">
+        </label>
+
+        <div class="error">
+            {{error_email}}
+        </div>
+
+        <input type="submit">
+        <hr>
+        <a href="/login">Already a member? Login here</a>
+    </form>
+
+{% endblock %}
